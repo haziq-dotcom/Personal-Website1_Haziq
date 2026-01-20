@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hobby | Mohamad Haziq</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#2c2c2c;color:#fff;font-family:'Poppins',sans-serif;}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 60px;
+  background:rgba(44,44,44,0.9);
+  transition:0.4s ease;
+  z-index:1000;
+}
+nav.sticky{background:#1f1f1f;box-shadow:0 4px 20px rgba(0,0,0,0.6);}
+.logo{font-size:26px;font-family:'Playfair Display',serif;}
+.logo span{color:#800000;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{text-decoration:none;color:#fff;font-weight:500;position:relative;transition:0.3s;}
+nav ul li a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:#800000;transition:0.3s;}
+nav ul li a:hover::after,nav ul li a.active::after{width:100%;}
+nav ul li a:hover{color:#800000;}
+.contact-btn{padding:10px 22px;background:linear-gradient(90deg,#5c1a1a,#800000);color:#fff;border-radius:30px;text-decoration:none;font-weight:500;transition:0.3s;}
+.contact-btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(128,0,0,0.6);}
+.contact-btn:active{transform:scale(0.95);}
+
+/* ===== HOBBY SECTION ===== */
+.hobby{
+  min-height:100vh;
+  padding:120px 80px;
+}
+.hobby h1{
+  text-align:center;
+  font-size:56px;
+  font-family:'Playfair Display',serif;
+  margin-bottom:60px;
+}
+.hobby h1 span{color:#800000;}
+.hobby-container{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+.hobby-card{
+  background:#1f1f1f;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
+  transition:transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hobby-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 40px rgba(128,0,0,0.8);
+}
+.hobby-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  transition:0.4s ease;
+}
+.hobby-card img:hover{transform:scale(1.05);}
+.hobby-card .content{
+  padding:20px;
+}
+.hobby-card .content h3{
+  font-size:22px;
+  margin-bottom:15px;
+  color:#800000;
+}
+.hobby-card .content p{
+  font-size:15px;
+  line-height:1.7;
+  color:#ccc;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+  .hobby-container{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:700px){
+  .hobby-container{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo">Mohamad <span>Haziq</span></div>
+  <ul>
+    <li><a href="cubalagi.html">Home</a></li>
+    <li><a href="cubalagi2.html">About Me</a></li>
+    <li><a href="cubalagi3.html" class="active">Hobby</a></li>
+    <li><a href="cubalagi4.html">Family</a></li>
+    <li><a href="cubalagi5.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" ></a>
+</nav>
+
+<!-- HOBBY SECTION -->
+<section class="hobby">
+  <h1>My <span>Hobbies</span></h1>
+  <div class="hobby-container">
+    
+    <!-- Hobby 1 -->
+    <div class="hobby-card">
+      <img src="image/hob_3.jpeg" alt="Hobby 1">
+      <div class="content">
+        <h3>Travel</h3>
+        <p>My third hobby is traveling. I enjoy exploring different states and learning about other cultures, which also helps to increase my knowledge.</p>
+      </div>
+    </div>
+    
+    <!-- Hobby 2 -->
+    <div class="hobby-card">
+      <img src="image/hob_2.jpeg" alt="Hobby 2">
+      <div class="content">
+        <h3>Playing PickleBall</h3>
+        <p>My second hobby is playing pickleball. This began because my friends often invited me to play, and I found it so much fun that I wanted to play again and again, making it one of my hobbies..</p>
+      </div>
+    </div>
+    
+    <!-- Hobby 3 -->
+    <div class="hobby-card">
+      <img src="image/hob_1.jpeg" alt="Hobby 3">
+      <div class="content">
+        <h3>Sports</h3>
+        <p>Playing football keeps me active and healthy. It also teaches teamwork and discipline.When I was in primary school, I enjoyed playing football. This started when I was young because I often went to the stadium with my father to watch football matches. My father would always bring me along whenever he had a game.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// ===== Sticky Navbar =====
+window.addEventListener("scroll", function(){
+  const navbar = document.getElementById("navbar");
+  navbar.classList.toggle("sticky", window.scrollY > 50);
+});
+</script>
+
+</body>
+</html>

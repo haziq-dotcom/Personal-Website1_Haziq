@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mohamad Haziq | Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#2c2c2c;color:#fff;font-family:'Poppins',sans-serif;}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 60px;
+  background:rgba(44,44,44,0.9);
+  transition:0.4s ease;
+  z-index:1000;
+}
+nav.sticky{background:#1f1f1f;box-shadow:0 4px 20px rgba(0,0,0,0.6);}
+.logo{font-size:26px;font-family:'Playfair Display',serif;}
+.logo span{color:#800000;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{text-decoration:none;color:#fff;font-weight:500;position:relative;transition:0.3s;}
+nav ul li a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:#800000;transition:0.3s;}
+nav ul li a:hover::after,nav ul li a.active::after{width:100%;}
+nav ul li a:hover{color:#800000;}
+.contact-btn{padding:10px 22px;color:#fff;border-radius:30px;text-decoration:none;font-weight:500;transition:0.3s;}
+
+
+/* ===== HERO ===== */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;}
+.hero h1{font-size:64px;color:#800000;font-family:'Playfair Display',serif;}
+.hero p{margin-top:20px;font-size:18px;color:#ccc;max-width:600px;margin-left:auto;margin-right:auto;}
+.hero .btn{margin-top:30px;padding:12px 30px;background:#800000;color:#fff;border-radius:30px;text-decoration:none;transition:0.3s;}
+.hero .btn:hover{background:#a52a2a;}
+
+/* ===== ABOUT (kalau nak guna dalam page lain) ===== */
+.about{display:flex;align-items:center;justify-content:space-between;}
+.about-img img{width:250px;height:350px;border-radius:50%;box-shadow:0 0 60px rgba(128,0,0,0.8);transition:0.4s;margin-left:300px;}
+.about-img img:hover{transform:scale(1.05);}
+.about-text{max-width:600px;margin-right:200px;}
+.about-text h2{font-size:42px;font-family:'Playfair Display',serif;}
+.about-text h2 span{color:#800000;}
+.about-text p{margin-top:50px;color:#ccc;line-height:1.8;}
+
+/* ===== SCROLL ANIMATION ===== */
+.fade-in{opacity:0;transform:translateY(40px);transition:1s ease;}
+.fade-in.show{opacity:1;transform:translateY(0);}
+
+/* ===== TYPING EFFECT ===== */
+.typing{border-right:2px solid #800000;white-space:nowrap;overflow:hidden;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo">Mohamad <span>Haziq</span></div>
+  <ul>
+    <li><a href="cubalagi.html">Home</a></li>
+    <li><a href="cubalagi2.html">About Me</a></li>
+    <li><a href="cubalagi3.html">Hobby</a></li>
+    <li><a href="cubalagi4.html">Family</a></li>
+    <li><a href="cubalagi5.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="contact-btn"></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <h1 class="typing" id="typing-text"></h1>
+    <a href="about.html" class="btn fade-in">Learn More</a>
+  </div>
+</section>
+
+<script>
+// ===== Sticky Navbar =====
+window.addEventListener("scroll", function(){
+  const navbar = document.getElementById("navbar");
+  navbar.classList.toggle("sticky", window.scrollY > 50);
+});
+
+// ===== Typing Effect =====
+const typingText = document.getElementById("typing-text");
+const text = "Hi, I’m Mohamad Haziq";
+let index = 0;
+function type(){
+  if(index < text.length){
+    typingText.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(type, 150);
+  }
+}
+type();
+</script>
+
+</body>
+</html>
